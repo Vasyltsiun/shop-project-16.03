@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-//funtion declaration
-function Title() {
-    return <h1>Hello Title Component</h1>
-}
+//arrow Function
+const Title = () => <h1>Hello Title Component</h1>
+
 function Component() {
     return (
         <p>
@@ -14,6 +13,7 @@ function Component() {
         </p>
     )
 }
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
