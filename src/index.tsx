@@ -2,7 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 //arrow Function
 
-const Title = () => <h1>Hello Title Component</h1>
+type HeaderProps = {
+    text: string
+}
+
+const Header = (props: HeaderProps) => {
+    return <h1>Hello {props.text} Component</h1>
+}
 
 const Content = () => (
     <React.Fragment>
@@ -24,7 +30,9 @@ const Content = () => (
 const App = () => {
     return (
         <>
-            <Title />
+            <Header text="Title" />
+            <Header text="App" />
+            <Header text="React" />
             <Content />
         </>
     )
