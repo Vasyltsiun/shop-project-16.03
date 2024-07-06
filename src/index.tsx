@@ -17,22 +17,20 @@ const Header = (props: HeaderProps) => {
     )
 }
 
-const Content = () => (
-    <React.Fragment>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            doloremque architecto vitae neque molestiae, ea illo provident
-            voluptate, earum necessitatibus sit beatae eos quas corporis
-            explicabo sunt assumenda autem quam.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia alias
-            doloribus voluptatem provident veritatis at nemo quibusdam
-            accusantium, illum facilis deleniti architecto culpa porro optio a
-            repellendus possimus nulla mollitia!
-        </p>
-    </React.Fragment>
-)
+type ContentProps = {
+    Title: string
+    FirstParagraph: string
+    SecondParagraph: string
+}
+const Content = (props: ContentProps) => {
+    return (
+        <>
+            <h2>{props.Title}</h2>
+            <p>{props.FirstParagraph}</p>
+            <p>{props.SecondParagraph}</p>
+        </>
+    )
+}
 
 const App = () => {
     return (
@@ -50,7 +48,16 @@ const App = () => {
                 text="React"
                 RightPart="component2"
             />
-            <Content />
+            <Content
+                Title="Hello world"
+                FirstParagraph="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt vitae accusamus consequatur possimus commodi placeat provident ipsa, sint quas repudiandae pariatur asperiores nemo suscipit. Architecto quas beatae iste rem ipsam."
+                SecondParagraph="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt vitae accusamus consequatur possimus commodi placeat provident ipsa, sint quas repudiandae pariatur asperiores nemo suscipit. Architecto quas beatae iste rem ipsam."
+            />
+            <Content
+                Title="Hello world2"
+                FirstParagraph="2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt vitae accusamus consequatur possimus commodi placeat provident ipsa, sint quas repudiandae pariatur asperiores nemo suscipit. Architecto quas beatae iste rem ipsam."
+                SecondParagraph="2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt vitae accusamus consequatur possimus commodi placeat provident ipsa, sint quas repudiandae pariatur asperiores nemo suscipit. Architecto quas beatae iste rem ipsam."
+            />
         </>
     )
 }
