@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 //arrow Function
 
 type HeaderProps = {
+    Order?: number
     LeftPart: string
     text: string
     RightPart: string
@@ -11,7 +12,7 @@ type HeaderProps = {
 const Header = (props: HeaderProps) => {
     return (
         <h1>
-            {props.LeftPart} {props.text} {props.RightPart}
+            {props.Order} {props.LeftPart} {props.text} {props.RightPart}
         </h1>
     )
 }
@@ -36,9 +37,19 @@ const Content = () => (
 const App = () => {
     return (
         <>
-            <Header LeftPart="Hello" text="Title" RightPart="component" />
+            <Header
+                Order={3}
+                LeftPart="Hello"
+                text="Title"
+                RightPart="component"
+            />
             <Header LeftPart="Hello1" text="App" RightPart="component1" />
-            <Header LeftPart="Hello2" text="React" RightPart="component2" />
+            <Header
+                Order={1}
+                LeftPart="Hello2"
+                text="React"
+                RightPart="component2"
+            />
             <Content />
         </>
     )
