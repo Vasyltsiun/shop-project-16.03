@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client'
 //arrow Function
 
 type HeaderProps = {
+    LeftPart: string
     text: string
+    RightPart: string
 }
 
 const Header = (props: HeaderProps) => {
-    return <h1>Hello {props.text} Component</h1>
+    return (
+        <h1>
+            {props.LeftPart} {props.text} {props.RightPart}
+        </h1>
+    )
 }
 
 const Content = () => (
@@ -30,9 +36,9 @@ const Content = () => (
 const App = () => {
     return (
         <>
-            <Header text="Title" />
-            <Header text="App" />
-            <Header text="React" />
+            <Header LeftPart="Hello" text="Title" RightPart="component" />
+            <Header LeftPart="Hello1" text="App" RightPart="component1" />
+            <Header LeftPart="Hello2" text="React" RightPart="component2" />
             <Content />
         </>
     )
