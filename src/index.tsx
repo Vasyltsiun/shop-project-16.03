@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client'
 const Title = () => <h1>Hello Title Component</h1>
 
 const Content = () => (
-    <div>
+    <React.Fragment>
         <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
             doloremque architecto vitae neque molestiae, ea illo provident
@@ -18,15 +18,15 @@ const Content = () => (
             accusantium, illum facilis deleniti architecto culpa porro optio a
             repellendus possimus nulla mollitia!
         </p>
-    </div>
+    </React.Fragment>
 )
 
 const App = () => {
     return (
-        <div>
+        <>
             <Title />
             <Content />
-        </div>
+        </>
     )
 }
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
