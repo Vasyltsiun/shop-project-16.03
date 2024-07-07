@@ -12,8 +12,14 @@ const App = () => {
                 text="Title"
                 RightPart="component"
                 background="aqua"
+                color="blue"
             />
-            <Header LeftPart="Hello1" text="App" RightPart="component1" />
+            <Header
+                LeftPart="Hello1"
+                text="App"
+                RightPart="component1"
+                color="green"
+            />
             <Header
                 Order={1}
                 LeftPart="Hello2"

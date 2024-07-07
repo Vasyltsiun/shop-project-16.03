@@ -4,6 +4,7 @@ type HeaderProps = {
     text: string
     RightPart: string
     background?: string
+    color?: string
 }
 
 const Header = ({
@@ -12,12 +13,13 @@ const Header = ({
     text,
     RightPart,
     background = 'purple',
+    color = 'white',
 }: HeaderProps) => {
     return (
         <h1
             style={{
                 background: background,
-                color: 'white',
+                color: color,
                 fontSize: '30px',
                 padding: '20px',
             }}
