@@ -1,21 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-//arrow Function
-
-type HeaderProps = {
-    Order?: number
-    LeftPart: string
-    text: string
-    RightPart: string
-}
-
-const Header = ({ Order, LeftPart, text, RightPart }: HeaderProps) => {
-    return (
-        <h1>
-            {Order} {LeftPart} {text} {RightPart}
-        </h1>
-    )
-}
+import Header from './Header'
 
 type ContentProps = {
     Title: string
