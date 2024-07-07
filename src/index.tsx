@@ -9,10 +9,10 @@ type HeaderProps = {
     RightPart: string
 }
 
-const Header = (props: HeaderProps) => {
+const Header = ({ Order, LeftPart, text, RightPart }: HeaderProps) => {
     return (
         <h1>
-            {props.Order} {props.LeftPart} {props.text} {props.RightPart}
+            {Order} {LeftPart} {text} {RightPart}
         </h1>
     )
 }
@@ -22,20 +22,13 @@ type ContentProps = {
     FirstParagraph: string
     SecondParagraph: string
 }
-// Деструктуризація
-/*const user = {
-    name: 'Jack',
-    age: 10,
-}
-const { name, age } = user
-console.log(name, age)*/
 
-const Content = (props: ContentProps) => {
+const Content = ({ Title, FirstParagraph, SecondParagraph }: ContentProps) => {
     return (
         <React.Fragment>
-            <h2>{props.Title}</h2>
-            <p>{props.FirstParagraph}</p>
-            <p>{props.SecondParagraph}</p>
+            <h2>{Title}</h2>
+            <p>{FirstParagraph}</p>
+            <p>{SecondParagraph}</p>
         </React.Fragment>
     )
 }
