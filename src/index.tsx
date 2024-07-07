@@ -24,11 +24,11 @@ type ContentProps = {
 }
 const Content = (props: ContentProps) => {
     return (
-        <>
+        <React.Fragment>
             <h2>{props.Title}</h2>
             <p>{props.FirstParagraph}</p>
             <p>{props.SecondParagraph}</p>
-        </>
+        </React.Fragment>
     )
 }
 
