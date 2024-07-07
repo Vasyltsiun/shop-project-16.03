@@ -22,6 +22,14 @@ type ContentProps = {
     FirstParagraph: string
     SecondParagraph: string
 }
+// Деструктуризація
+/*const user = {
+    name: 'Jack',
+    age: 10,
+}
+const { name, age } = user
+console.log(name, age)*/
+
 const Content = (props: ContentProps) => {
     return (
         <React.Fragment>
