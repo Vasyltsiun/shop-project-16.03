@@ -1,36 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-//arrow Function
-
-type HeaderProps = {
-    Order?: number
-    LeftPart: string
-    text: string
-    RightPart: string
-}
-
-const Header = (props: HeaderProps) => {
-    return (
-        <h1>
-            {props.Order} {props.LeftPart} {props.text} {props.RightPart}
-        </h1>
-    )
-}
-
-type ContentProps = {
-    Title: string
-    FirstParagraph: string
-    SecondParagraph: string
-}
-const Content = (props: ContentProps) => {
-    return (
-        <React.Fragment>
-            <h2>{props.Title}</h2>
-            <p>{props.FirstParagraph}</p>
-            <p>{props.SecondParagraph}</p>
-        </React.Fragment>
-    )
-}
+import Header from './Header'
+import Content from './Content'
 
 const App = () => {
     return (
@@ -40,13 +11,21 @@ const App = () => {
                 LeftPart="Hello"
                 text="Title"
                 RightPart="component"
+                background="aqua"
+                color="blue"
             />
-            <Header LeftPart="Hello1" text="App" RightPart="component1" />
+            <Header
+                LeftPart="Hello1"
+                text="App"
+                RightPart="component1"
+                color="green"
+            />
             <Header
                 Order={1}
                 LeftPart="Hello2"
                 text="React"
                 RightPart="component2"
+                background="red"
             />
             <Content
                 Title="Hello world"
