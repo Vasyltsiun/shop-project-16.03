@@ -3,11 +3,25 @@ type HeaderProps = {
     LeftPart: string
     text: string
     RightPart: string
+    background?: string
 }
 
-const Header = ({ Order, LeftPart, text, RightPart }: HeaderProps) => {
+const Header = ({
+    Order,
+    LeftPart,
+    text,
+    RightPart,
+    background = 'purple',
+}: HeaderProps) => {
     return (
-        <h1>
+        <h1
+            style={{
+                background: background,
+                color: 'white',
+                fontSize: '30px',
+                padding: '20px',
+            }}
+        >
             {Order} {LeftPart} {text} {RightPart}
         </h1>
     )

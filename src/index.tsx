@@ -11,6 +11,7 @@ const App = () => {
                 LeftPart="Hello"
                 text="Title"
                 RightPart="component"
+                background="aqua"
             />
             <Header LeftPart="Hello1" text="App" RightPart="component1" />
             <Header
@@ -18,6 +19,7 @@ const App = () => {
                 LeftPart="Hello2"
                 text="React"
                 RightPart="component2"
+                background="red"
             />
             <Content
                 Title="Hello world"
