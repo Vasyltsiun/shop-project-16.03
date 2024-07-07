@@ -1,22 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Header from './Header'
-
-type ContentProps = {
-    Title: string
-    FirstParagraph: string
-    SecondParagraph: string
-}
-
-const Content = ({ Title, FirstParagraph, SecondParagraph }: ContentProps) => {
-    return (
-        <React.Fragment>
-            <h2>{Title}</h2>
-            <p>{FirstParagraph}</p>
-            <p>{SecondParagraph}</p>
-        </React.Fragment>
-    )
-}
+import Content from './Content'
 
 const App = () => {
     return (
