@@ -32,7 +32,10 @@ const Header = (props: Props) => {
                         >
                             <img src={logo} alt="" />
                         </Typography>
-                        <Button color="inherit">Login</Button>
+                        <Button color="inherit">Home</Button>
+                        <Button color="inherit">Products</Button>
+                        <Button color="inherit">Payment</Button>
+                        <Button color="inherit">Cart</Button>
                     </Toolbar>
                 </Container>
             </AppBar>
