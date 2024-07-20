@@ -1,11 +1,16 @@
-import { Button, Card, CardContent } from '@mui/material'
+import {
+    Button,
+    Card,
+    CardContent,
+    tablePaginationClasses,
+} from '@mui/material'
 import './ProductListItem.css'
-import { title } from 'process'
+import { Title } from '@mui/icons-material'
 
 type Props = {
     title: string
 }
-const ProductListItem = (props: Props) => {
+const ProductListItem = ({ title }: Props) => {
     return (
         <Card variant="outlined" className="product-list-item">
             <CardContent>
