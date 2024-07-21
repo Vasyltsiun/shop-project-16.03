@@ -1,5 +1,8 @@
 import { Grid, Typography } from '@mui/material'
 import ProductListItem from './ProductListItem'
+import { productsArrey } from 'utils/productsArrey'
+
+console.log(productsArrey)
 
 type Props = {}
 
@@ -17,30 +20,28 @@ const ProductsList = (props: Props) => {
                 Products list
             </Typography>
             <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} lg={4}>
-                    <ProductListItem
-                        title="iPhone 15"
-                        description="This is iPhone 15"
-                        capacity="capacity: 512Gb"
-                        price="$ 1200"
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} lg={4}>
-                    <ProductListItem
-                        title="iPhone 14"
-                        description="This is iPhone 14"
-                        capacity="capacity: 128Gb"
-                        price="$ 1000"
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} lg={4}>
-                    <ProductListItem
-                        title="iPhone 13"
-                        description="This is iPhone 13"
-                        capacity="capacity: 64Gb"
-                        price="$ 800"
-                    />
-                </Grid>
+                {productsArrey.map(
+                    ({
+                        id,
+                        title,
+                        description,
+                        type,
+                        capacity,
+                        price,
+                        image,
+                    }) => (
+                        <Grid item xs={12} sm={6} lg={4} key={id}>
+                            <ProductListItem
+                                title={title}
+                                description={description}
+                                type={type}
+                                capacity={capacity}
+                                price={price}
+                                image={image}
+                            />
+                        </Grid>
+                    )
+                )}
             </Grid>
         </>
     )

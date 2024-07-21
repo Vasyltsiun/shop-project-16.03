@@ -8,3 +8,15 @@
     display: flex;
     justify-content: center;
 }
+.product-image {
+    display: flex;
+    justify-content: center;
+}
+.product-image img {
+    height: 200px;
+}
+.product-price {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
