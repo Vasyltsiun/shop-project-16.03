@@ -1,9 +1,4 @@
-import {
-    Button,
-    Card,
-    CardContent,
-    tablePaginationClasses,
-} from '@mui/material'
+import { Button, Card, CardContent } from '@mui/material'
 import './ProductListItem.css'
 
 type Props = {
