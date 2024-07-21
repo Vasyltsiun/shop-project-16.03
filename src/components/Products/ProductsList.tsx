@@ -20,17 +20,19 @@ const ProductsList = (props: Props) => {
                 Products list
             </Typography>
             <Grid container spacing={2}>
-                {productsArrey.map((product, i) => (
-                    <Grid item xs={12} sm={6} lg={4} key={i}>
-                        <ProductListItem
-                            title={product.title}
-                            description={product.description}
-                            type={product.type}
-                            capacity={product.capacity}
-                            price={product.price}
-                        />
-                    </Grid>
-                ))}
+                {productsArrey.map(
+                    ({ id, title, description, type, capacity, price }) => (
+                        <Grid item xs={12} sm={6} lg={4} key={id}>
+                            <ProductListItem
+                                title={title}
+                                description={description}
+                                type={type}
+                                capacity={capacity}
+                                price={price}
+                            />
+                        </Grid>
+                    )
+                )}
             </Grid>
         </>
     )
