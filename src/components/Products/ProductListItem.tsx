@@ -14,12 +14,14 @@ type Props = {
 type State = {
     count: number
     color: string
+    isDescription: boolean
 }
 
 class ProductListItem extends Component<Props, State> {
     state = {
         count: 1,
         color: 'green',
+        isDescription: false,
     }
 
     onIncrementClick = () => {
@@ -37,6 +39,12 @@ class ProductListItem extends Component<Props, State> {
     changeColor = () => {
         this.setState((prevState) => ({
             color: prevState.color === 'green' ? 'red' : 'green',
+        }))
+    }
+
+    toggleDescription = () => {
+        this.setState((prevState) => ({
+            isDescription: prevState.isDescription ? false : true,
         }))
     }
 
@@ -66,6 +74,17 @@ class ProductListItem extends Component<Props, State> {
                     <div className="product-features">
                         Capacity: {this.props.capacity}
                     </div>
+                    <button onClick={}>Toogle description</button>
+                    {this.state.isDescription ? (
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Adipisci illum, iusto similique veritatis,
+                            recusandae porro numquam delectus aliquid
+                            perferendis eius et, sed id officiis sapiente
+                            laudantium aperiam itaque doloribus eum?
+                        </p>
+                    ) : null}
+
                     <div className="product-price">$ {this.props.price}</div>
 
                     <div className="product-quantity"></div>
