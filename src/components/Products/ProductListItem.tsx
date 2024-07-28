@@ -43,6 +43,10 @@ class ProductListItem extends Component<Props, State> {
                     <p className="product-description">
                         {this.props.description}
                     </p>
+                    <div>
+                        <div>Color:green</div>
+                        <button>Change color</button>
+                    </div>
                     <div className="product-features">
                         Type: {this.props.type}
                     </div>
