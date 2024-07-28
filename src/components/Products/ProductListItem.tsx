@@ -11,7 +11,21 @@ type Props = {
     image: string
 }
 
-class ProductListItem extends Component<Props> {
+type State = {
+    count: number
+}
+
+class ProductListItem extends Component<Props, State> {
+    state = {
+        count: 1,
+    }
+
+    onIncrementClick() {
+        this.setState({
+            count: 10,
+        })
+    }
+
     render() {
         return (
             <Card variant="outlined" className="product-list-item">
@@ -33,8 +47,13 @@ class ProductListItem extends Component<Props> {
 
                     <div className="product-quantity"></div>
                     <Button variant="outlined">-</Button>
-                    <TextField size="small" value="1" />
-                    <Button variant="outlined">+ </Button>
+                    <TextField size="small" value={this.state.count} />
+                    <Button
+                        variant="outlined"
+                        onClick={this.onIncrementClick.bind(this)}
+                    >
+                        +{' '}
+                    </Button>
 
                     <div className="btns-wrapper">
                         <Button variant="outlined">Add to cart</Button>
