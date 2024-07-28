@@ -44,7 +44,7 @@ class ProductListItem extends Component<Props, State> {
 
     toggleDescription = () => {
         this.setState((prevState) => ({
-            isDescription: prevState.isDescription ? false : true,
+            isDescription: !prevState.isDescription,
         }))
     }
 
@@ -74,7 +74,9 @@ class ProductListItem extends Component<Props, State> {
                     <div className="product-features">
                         Capacity: {this.props.capacity}
                     </div>
-                    <button onClick={}>Toogle description</button>
+                    <button onClick={() => this.toggleDescription()}>
+                        {this.state.isDescription ? 'Hide' : 'Show'} description
+                    </button>
                     {this.state.isDescription ? (
                         <p>
                             Lorem ipsum dolor, sit amet consectetur adipisicing
