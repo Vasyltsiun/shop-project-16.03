@@ -69,7 +69,11 @@ class ProductListItem extends Component<Props, State> {
                     <div className="product-price">$ {this.props.price}</div>
 
                     <div className="product-quantity"></div>
-                    <Button variant="outlined" onClick={this.onDecrementClick}>
+                    <Button
+                        variant="outlined"
+                        onClick={this.onDecrementClick}
+                        disabled={this.state.count <= 1}
+                    >
                         -
                     </Button>
                     <TextField size="small" value={this.state.count} />
