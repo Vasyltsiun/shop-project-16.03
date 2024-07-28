@@ -35,9 +35,9 @@ class ProductListItem extends Component<Props, State> {
     }
 
     changeColor = () => {
-        this.setState({
-            color: 'red',
-        })
+        this.setState((prevState) => ({
+            color: prevState.color === 'green' ? 'red' : 'green',
+        }))
     }
 
     render() {
@@ -52,7 +52,12 @@ class ProductListItem extends Component<Props, State> {
                         {this.props.description}
                     </p>
                     <div>
-                        <div>Color:{this.state.color}</div>
+                        <div>
+                            Color:{' '}
+                            <span className={`${this.state.color}`}>
+                                {this.state.color}
+                            </span>
+                        </div>
                         <button onClick={this.changeColor}>Change color</button>
                     </div>
                     <div className="product-features">
