@@ -13,11 +13,13 @@ type Props = {
 
 type State = {
     count: number
+    color: string
 }
 
 class ProductListItem extends Component<Props, State> {
     state = {
         count: 1,
+        color: 'green',
     }
 
     onIncrementClick = () => {
@@ -32,6 +34,12 @@ class ProductListItem extends Component<Props, State> {
         }))
     }
 
+    changeColor = () => {
+        this.setState({
+            color: 'red',
+        })
+    }
+
     render() {
         return (
             <Card variant="outlined" className="product-list-item">
@@ -44,8 +52,8 @@ class ProductListItem extends Component<Props, State> {
                         {this.props.description}
                     </p>
                     <div>
-                        <div>Color:green</div>
-                        <button>Change color</button>
+                        <div>Color:{this.state.color}</div>
+                        <button onClick={this.changeColor}>Change color</button>
                     </div>
                     <div className="product-features">
                         Type: {this.props.type}
