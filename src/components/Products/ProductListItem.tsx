@@ -23,6 +23,7 @@ const ProductListItem = ({
     const onIncrementClick = () => {
         setCount((prevCount) => prevCount + 1)
     }
+
     const onDecrementClick = () => {
         setCount((prevCount) => prevCount - 1)
     }
