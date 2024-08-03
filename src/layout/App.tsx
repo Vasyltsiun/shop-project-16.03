@@ -16,10 +16,21 @@ const App = () => {
         totalCount: 0,
         totalPrice: 0,
     })
+
+    const addProductToCart = (count: number, price: number) => {
+        setCartData((prevState) => ({
+            totalCount: prevState.totalCount + count,
+            totalPrice: prevState.totalPrice + count * price,
+        }))
+    }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
+            <button onClick={() => addProductToCart(5, 1000)}>
+                Add to cart(5,1000$)
+            </button>
             <Main />
             <Footer />
         </StyledEngineProvider>
