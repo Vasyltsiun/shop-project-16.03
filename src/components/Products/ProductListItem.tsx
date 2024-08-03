@@ -18,7 +18,13 @@ const ProductListItem = ({
     price,
     image,
 }: Props) => {
-    const [count, setCount] = useState<number>(2)
+    const [count, setCount] = useState<number>(1)
+    const [isDescriptionShow, setDescriptionShow] = useState<boolean>(false)
+
+    const toggleDescription = () => {
+        setIsDescriptionShow((prevState) => !prevState)
+    }
+
     const onIncrementClick = () => {
         setCount((prevCount) => prevCount + 1)
     }
@@ -26,10 +32,6 @@ const ProductListItem = ({
         setCount((prevCount) => prevCount - 1)
     }
 
-    const [color, setColor] = useState<string>('green')
-    const toggleColorChange = () => {
-        setColor((prevState) => (prevState === 'green' ? 'red' : 'green'))
-    }
     return (
         <Card variant="outlined" className="product-list-item">
             <CardContent>
@@ -42,10 +44,17 @@ const ProductListItem = ({
                 <div className="product-features">Type: {type}</div>
 
                 <div>
-                    <div>
-                        Color: <span className={`${color}`}>{color}</span>
-                    </div>
-                    <button onClick={toggleColorChange}>Change color</button>
+                    <button onClick={toggleDescription}>
+                        {isDescriptionShow ? 'Hide' : 'Show'}
+                        description
+                    </button>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Laborum ipsum eos optio ullam eligendi mollitia. Ut
+                        minima nisi ipsam molestiae nam, asperiores repellendus
+                        laborum quos placeat voluptate veritatis quo animi!
+                    </p>
                 </div>
 
                 <div className="product-features">Capacity: {capacity}</div>
