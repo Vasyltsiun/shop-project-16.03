@@ -4,8 +4,7 @@ type Props = {
         totalPrice: number
     }
 }
-
-const CartHeader = (props: Props) => {
+const CartHeader = ({ cartData }: Props) => {
     return (
         <div>
             <div>{cartData.totalCount}</div>
@@ -13,5 +12,4 @@ const CartHeader = (props: Props) => {
         </div>
     )
 }
-
 export default CartHeader
