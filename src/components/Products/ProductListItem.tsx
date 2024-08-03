@@ -19,11 +19,6 @@ const ProductListItem = ({
     image,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
-    const [isDescriptionShow, setDescriptionShow] = useState<boolean>(false)
-
-    const toggleDescription = () => {
-        setIsDescriptionShow((prevState) => !prevState)
-    }
 
     const onIncrementClick = () => {
         setCount((prevCount) => prevCount + 1)
@@ -42,20 +37,6 @@ const ProductListItem = ({
                 <h3 className="product-title">{title}</h3>
                 <p className="product-description">{description}</p>
                 <div className="product-features">Type: {type}</div>
-
-                <div>
-                    <button onClick={toggleDescription}>
-                        {isDescriptionShow ? 'Hide' : 'Show'}
-                        description
-                    </button>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Laborum ipsum eos optio ullam eligendi mollitia. Ut
-                        minima nisi ipsam molestiae nam, asperiores repellendus
-                        laborum quos placeat voluptate veritatis quo animi!
-                    </p>
-                </div>
 
                 <div className="product-features">Capacity: {capacity}</div>
                 <div className="product-price">$ {price}</div>
