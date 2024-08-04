@@ -9,6 +9,7 @@ type Product = {
     capacity: string
     price: number
     image: string
+
 }
 
 export const productsArrey: Product[] =[
@@ -19,6 +20,8 @@ export const productsArrey: Product[] =[
         capacity: '64',
         price: 1000,
         image: 'images/iPhone_green.webp',
+  
+
 
     },
     {   id: 2,
@@ -28,6 +31,7 @@ export const productsArrey: Product[] =[
         capacity: '64',
         price: 1000,
         image: 'images/iPhone_black.webp',
+
     },
     {   id: 3,
         title: 'iPhone 13',
@@ -36,6 +40,7 @@ export const productsArrey: Product[] =[
         capacity: '64',
         price: 1000,
         image: 'images/iPhone_blue.webp',
+
     },
     {   id: 4,
         title: 'iPhone 14 Pro',
@@ -44,6 +49,7 @@ export const productsArrey: Product[] =[
         capacity: '64',
         price: 1000,
         image: 'images/iPhone_grey.webp',
+
     },
     {   id: 5,
         title: 'iPhone 12 Pro',
@@ -52,6 +58,7 @@ export const productsArrey: Product[] =[
         capacity: '64',
         price: 1000,
         image: 'images/iPhone_red.webp',
+
     },
     {   id: 6,
         title: 'iPhone 11',
@@ -60,5 +67,6 @@ export const productsArrey: Product[] =[
         capacity: '64',
         price: 1000,
         image: 'images/iPhone_white.webp',
+
     },
 ]
