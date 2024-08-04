@@ -3,10 +3,15 @@ import Toolbar from '@mui/material/Toolbar'
 import { Container } from '@mui/material'
 import Logo from '../components/Logo/Logo'
 import Menu from '../components/Menu/Menu'
+import CartHeader from 'components/CartHeader/CartHeader'
 
-type Props = {}
+type Props = {
+    ProductsInCart: {
+        [id: number]: number
+    }
+}
 
-const Header = (props: Props) => {
+const Header = ({ ProductsInCart }: Props) => {
     return (
         <>
             {' '}
@@ -15,6 +20,7 @@ const Header = (props: Props) => {
                     <Toolbar>
                         <Logo />
                         <Menu />
+                        <CartHeader ProductsInCart={ProductsInCart} />
                     </Toolbar>
                 </Container>
             </AppBar>
