@@ -70,7 +70,7 @@ export const productsArrey: Product[] = [
     },
 ]
 
-export const getProductObject = (array: Product[]) =>
+export const getProductsObject = (array: Product[]) =>
     array.reduce(
         (obj, product) => ({
             ...obj,
