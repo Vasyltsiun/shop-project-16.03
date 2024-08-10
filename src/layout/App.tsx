@@ -11,18 +11,17 @@ type ProductsInCartType = {
 }
 
 const App = () => {
-    const [ProductsInCart, setProductsInCart] = useState<ProductsInCartType>({
-        2: 3,
-        3: 6,
-    })
+    const [ProductsInCart, setProductsInCart] = useState<ProductsInCartType>({})
 
     const addProductToCart = (id: number, count: number, price: number) => {
-        setProductsInCart((prevState) => {
-            const newState = { ...prevState }
+        setProductsInCart((prevState) => ({
+            ...prevState,
+            [id]: (prevState[id] || 0) + count,
+            /*const newState = { ...prevState }
             const productQty = newState[id] || 0
             newState[id] = productQty + count
-            return newState
-        })
+            return newState*/
+        }))
     }
 
     return (
