@@ -4,7 +4,9 @@ import { productsArrey } from 'utils/productsArrey'
 
 console.log(productsArrey)
 
-type Props = { addProductToCart: (count: number, price: number) => void }
+type Props = {
+    addProductToCart: (id: number, count: number, price: number) => void
+}
 
 const ProductsList = ({ addProductToCart }: Props) => {
     return (
@@ -38,6 +40,7 @@ const ProductsList = ({ addProductToCart }: Props) => {
                                 capacity={capacity}
                                 price={price}
                                 image={image}
+                                id={id}
                                 addProductToCart={addProductToCart}
                             />
                         </Grid>
