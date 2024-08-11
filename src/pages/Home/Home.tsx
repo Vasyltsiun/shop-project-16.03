@@ -4,8 +4,7 @@ import ProductList from 'components/Products/ProductsList'
 type Props = {
     addProductToCart: (id: number, count: number, price: number) => void
 }
-
-const Main = ({ addProductToCart }: Props) => {
+const Home = ({ addProductToCart }: Props) => {
     return (
         <>
             <Container className="main-container" component={'main'}>
@@ -14,4 +13,4 @@ const Main = ({ addProductToCart }: Props) => {
         </>
     )
 }
-export default Main
+export default Home
