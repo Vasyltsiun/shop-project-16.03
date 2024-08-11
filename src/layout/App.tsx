@@ -7,6 +7,8 @@ import { useState } from 'react'
 import { Route, Routes } from 'react-router'
 import Home from 'pages/Home/Home'
 import CartPage from 'pages/Cart/CartPage'
+import ProductPage from 'pages/Products/ProductsPage'
+import PaymentPage from 'pages/Payment/PaymentPage'
 
 type productsInCartType = {
     [id: number]: number
@@ -36,6 +38,8 @@ const App = () => {
                     element={<Home addProductToCart={addProductToCart} />}
                 />
                 <Route path="cart" element={<CartPage />} />
+                <Route path="payment" element={<PaymentPage />} />
+                <Route path="products" element={<ProductPage />} />
             </Routes>
             <Footer />
         </StyledEngineProvider>
