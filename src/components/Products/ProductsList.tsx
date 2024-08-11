@@ -1,10 +1,12 @@
 import { Grid, Typography } from '@mui/material'
 import ProductListItem from './ProductListItem'
-import { productsArrey } from 'utils/productsArrey'
+import { productsArray } from 'utils/productsArray'
 
-console.log(productsArrey)
+console.log(productsArray)
 
-type Props = { addProductToCart: (count: number, price: number) => void }
+type Props = {
+    addProductToCart: (id: number, count: number, price: number) => void
+}
 
 const ProductsList = ({ addProductToCart }: Props) => {
     return (
@@ -20,7 +22,7 @@ const ProductsList = ({ addProductToCart }: Props) => {
                 Products list
             </Typography>
             <Grid container spacing={2}>
-                {productsArrey.map(
+                {productsArray.map(
                     ({
                         id,
                         title,
@@ -38,6 +40,7 @@ const ProductsList = ({ addProductToCart }: Props) => {
                                 capacity={capacity}
                                 price={price}
                                 image={image}
+                                id={id}
                                 addProductToCart={addProductToCart}
                             />
                         </Grid>
