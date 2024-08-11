@@ -6,12 +6,12 @@ import Menu from '../components/Menu/Menu'
 import CartHeader from 'components/CartHeader/CartHeader'
 
 type Props = {
-    ProductsInCart: {
+    productsInCart: {
         [id: number]: number
     }
 }
 
-const Header = ({ ProductsInCart }: Props) => {
+const Header = ({ productsInCart }: Props) => {
     return (
         <>
             {' '}
@@ -20,7 +20,7 @@ const Header = ({ ProductsInCart }: Props) => {
                     <Toolbar>
                         <Logo />
                         <Menu />
-                        <CartHeader ProductsInCart={ProductsInCart} />
+                        <CartHeader productsInCart={productsInCart} />
                     </Toolbar>
                 </Container>
             </AppBar>

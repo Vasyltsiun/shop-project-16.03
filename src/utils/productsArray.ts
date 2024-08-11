@@ -8,7 +8,7 @@ export type Product = {
     image: string
 }
 
-export const productsArrey: Product[] = [
+export const productsArray: Product[] = [
     {
         id: 1,
         title: 'iPhone 15',
@@ -30,7 +30,7 @@ export const productsArrey: Product[] = [
     },
 
     {
-        id: 12,
+        id: 3,
         title: 'iPhone 13',
         description: 'This is iPhone 13',
         type: 'phone',
@@ -50,7 +50,7 @@ export const productsArrey: Product[] = [
     },
 
     {
-        id: 15,
+        id: 5,
         title: 'iPhone 12 Pro',
         description: 'This is iPhone 12 Pro',
         type: 'phone',

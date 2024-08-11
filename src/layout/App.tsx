@@ -6,17 +6,14 @@ import 'styles/layout.css'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
 
-type ProductsInCartType = {
+type productsInCartType = {
     [id: number]: number
 }
 
 const App = () => {
-    const [ProductsInCart, setProductsInCart] = useState<ProductsInCartType>({
-        1: 5,
-        3: 6,
-    })
+    const [productsInCart, setProductsInCart] = useState<productsInCartType>({})
 
-    const addProductToCart = (id: number, count: number, price: number) => {
+    const addProductToCart = (id: number, count: number) => {
         setProductsInCart((prevState) => ({
             ...prevState,
             [id]: (prevState[id] || 0) + count,
@@ -30,7 +27,7 @@ const App = () => {
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
-            <Header ProductsInCart={ProductsInCart} />
+            <Header productsInCart={productsInCart} />
             <Main addProductToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>
