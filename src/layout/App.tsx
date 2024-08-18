@@ -21,10 +21,6 @@ const App = () => {
         setProductsInCart((prevState) => ({
             ...prevState,
             [id]: (prevState[id] || 0) + count,
-            /*const newState = { ...prevState }
-            const productQty = newState[id] || 0
-            newState[id] = productQty + count
-            return newState*/
         }))
     }
 
