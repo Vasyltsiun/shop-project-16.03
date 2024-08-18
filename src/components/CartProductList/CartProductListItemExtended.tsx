@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@mui/material'
+import { Card, CardContent, Grid } from '@mui/material'
 import { Product } from 'utils/productsArray'
 
 type Props = {
@@ -7,16 +7,18 @@ type Props = {
 }
 const CartProductListItemExtended = ({ product, productsCount }: Props) => {
     return (
-        <Card variant="outlined">
-            <CardContent>
-                <div>
-                    <img src={product.image} alt="" />
-                </div>
-                <div>{product.title}</div>
-                <p>Price for one item:{product.price}</p>
-                <div>Count: {productsCount}</div>
-            </CardContent>
-        </Card>
+        <Grid item xs={12} sm={6} md={4}>
+            <Card variant="outlined">
+                <CardContent>
+                    <div className="product-img">
+                        <img src={product.image} alt="" />
+                    </div>
+                    <div>{product.title}</div>
+                    <p>Price for one item:{product.price}</p>
+                    <div>Count: {productsCount}</div>
+                </CardContent>
+            </Card>
+        </Grid>
     )
 }
 export default CartProductListItemExtended
