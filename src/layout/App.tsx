@@ -24,10 +24,20 @@ const App = () => {
         }))
     }
 
+    const removeProductFromCart = (id: number) =>
+        setProductsInCart((prevState) => {
+            let prevProductInCart = { ...prevState }
+            delete prevProductInCart[id]
+            return prevProductInCart
+        })
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
+            <button onClick={() => removeProductFromCart(1)}>
+                Delete (id:1)
+            </button>
             <Routes>
                 <Route
                     path="/"
