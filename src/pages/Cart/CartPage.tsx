@@ -1,32 +1,17 @@
-import { getProductsObject, Product, productsArray } from 'utils/productsArray'
 import { Container } from '@mui/material'
 import CartTotal from 'components/CartTotal/CartTotal'
+import CartProductList from 'components/CartProductList/CartProductList'
 
 type Props = {
     productsInCart: {
         [id: number]: number
     }
-
-    productsObject?: {
-        [id: number]: Product
-    }
 }
 
-const CartPage = ({
-    productsInCart,
-    productsObject = getProductsObject(productsArray),
-}: Props) => {
+const CartPage = ({ productsInCart }: Props) => {
     return (
         <Container>
-            <div>
-                {Object.keys(productsInCart).map((productId) => (
-                    <div key={productId}>
-                        {productsObject[+productId].title}:{' '}
-                        {productsInCart[+productId]} : price for one item -{' '}
-                        {productsInCart[+productId]}
-                    </div>
-                ))}
-            </div>
+            <CartProductList productsInCart={productsInCart} />
             <CartTotal productsInCart={productsInCart} />
         </Container>
     )
