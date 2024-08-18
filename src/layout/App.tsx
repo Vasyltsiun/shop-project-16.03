@@ -9,6 +9,7 @@ import Home from 'pages/Home/Home'
 import CartPage from 'pages/Cart/CartPage'
 import ProductPage from 'pages/Products/ProductsPage'
 import PaymentPage from 'pages/Payment/PaymentPage'
+import { omit } from 'lodash'
 
 type productsInCartType = {
     [id: number]: number
@@ -24,12 +25,9 @@ const App = () => {
         }))
     }
 
-    const removeProductFromCart = (id: number) =>
-        setProductsInCart((prevState) => {
-            let prevProductInCart = { ...prevState }
-            delete prevProductInCart[id]
-            return prevProductInCart
-        })
+    const removeProductFromCart = (id: number) => {
+        setProductsInCart((prevState) => omit(prevState, id))
+    }
 
     return (
         <StyledEngineProvider injectFirst>
