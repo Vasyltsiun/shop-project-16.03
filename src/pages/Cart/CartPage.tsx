@@ -2,6 +2,7 @@ import { Container, Grid, Typography } from '@mui/material'
 import CartTotal from 'components/CartTotal/CartTotal'
 import CartProductList from 'components/CartProductList/CartProductList'
 import CartProductListItemExtended from 'components/CartProductList/CartProductListItemExtended'
+import { useAppSelector } from 'store/hooks'
 
 type Props = {
     productsInCart: {
@@ -11,11 +12,8 @@ type Props = {
     changeProductQuantity: (id: number, quantity: number) => void
 }
 
-const CartPage = ({
-    productsInCart,
-    removeProductFromCart,
-    changeProductQuantity,
-}: Props) => {
+const CartPage = ({ removeProductFromCart, changeProductQuantity }: Props) => {
+    const productsInCart = useAppSelector((state) => state.productsInCart)
     return (
         <Container>
             <Typography variant="h1" component={'h1'} sx={{ margin: '40px 0' }}>
