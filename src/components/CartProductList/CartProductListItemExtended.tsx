@@ -6,6 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { addLike, removeLike } from 'store/likeSlice'
+import { removeProductFromCart } from 'store/cartSlice'
 
 type Props = {
     product: Product
@@ -16,7 +17,7 @@ type Props = {
 const CartProductListItemExtended = ({
     product,
     productsCount,
-    removeProductFromCart,
+
     changeProductQuantity,
 }: Props) => {
     const isLiked = useAppSelector(
@@ -48,7 +49,7 @@ const CartProductListItemExtended = ({
                         count={productsCount}
                         onDecrementClick={() => {
                             if (productsCount === 1) {
-                                removeProductFromCart(product.id)
+                                dispatch(removeProductFromCart(product.id))
                             } else {
                                 changeProductQuantity(
                                     product.id,
@@ -63,7 +64,9 @@ const CartProductListItemExtended = ({
                     />
                     <Button
                         variant="outlined"
-                        onClick={() => removeProductFromCart(product.id)}
+                        onClick={() =>
+                            dispatch(removeProductFromCart(product.id))
+                        }
                     >
                         <DeleteIcon />
                     </Button>
