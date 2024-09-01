@@ -10,6 +10,7 @@ import CartPage from 'pages/Cart/CartPage'
 import ProductPage from 'pages/Products/ProductsPage'
 import PaymentPage from 'pages/Payment/PaymentPage'
 import { omit } from 'lodash'
+import CheckoutPage from 'pages/Checkout/CheckoutPage'
 
 type productsInCartType = {
     [id: number]: number
@@ -56,6 +57,7 @@ const App = () => {
                 />
                 <Route path="payment" element={<PaymentPage />} />
                 <Route path="products" element={<ProductPage />} />
+                <Route path="checkout" element={<CheckoutPage />} />
             </Routes>
             <Footer />
         </StyledEngineProvider>

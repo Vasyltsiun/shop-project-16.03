@@ -1,8 +1,9 @@
-import { Container, Grid, Typography } from '@mui/material'
+import { Button, Container, Grid, Typography } from '@mui/material'
 import CartTotal from 'components/CartTotal/CartTotal'
 import CartProductList from 'components/CartProductList/CartProductList'
 import CartProductListItemExtended from 'components/CartProductList/CartProductListItemExtended'
 import { useAppSelector } from 'store/hooks'
+import { Link } from 'react-router-dom'
 
 type Props = {
     productsInCart: {
@@ -28,6 +29,9 @@ const CartPage = ({ removeProductFromCart, changeProductQuantity }: Props) => {
                 />
             </Grid>
             <CartTotal productsInCart={productsInCart} />
+            <Link to="/checkout">
+                <Button>Proceed to checkout</Button>
+            </Link>
         </Container>
     )
 }
